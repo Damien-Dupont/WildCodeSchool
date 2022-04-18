@@ -1,42 +1,167 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <script>
   const CONFIG = {
-
     // the category, name, key, url, search path and color for your commands
     // if none of the specified keys are matched, the '*' key is used
     commands: [
-        [null, 'Lilo', '*', 'https://search.lilo.org/', '/searchweb.php?q={}', '#111'],
-        ['Office', 'Drive', 'D', 'https://drive.google.com/drive/my-drive', null, '#833ab4'],
-        ['Office', 'Gmail', 'G', 'https://mail.google.com/mail/u/0/#inbox', null, '#833ab4'],
-        ['Office', 'Agenda', 'A', 'https://calendar.google.com/calendar/u/0/r?tab=mc', null, '#833ab4'],
-        ['Office', 'Planning', 'P', 'https://docs.google.com/spreadsheets/d/1Ruc8IqQE_iHZ5jGpGdpxXB8An_Pj5EEZklcHAkQp0Go/edit#gid=768699138', null, '#833ab4'],
-        ['Office', 'HubSpot', 'H', 'https://app.hubspot.com/login', null, '##833ab4'],
-        ['Office', 'Trello', 'T', 'https://trello.com/b/9VArycJL/ressources'],
-        ['RH', 'Lucca', 'RH', 'https://wcs.ilucca.net/', null, '#1da1f2'],
-        ['RH', 'Congé', 'CP', 'https://www.paiepilote.fr/', null, '#1da1f2'],
-        ['RH', 'CSE', 'CSE', 'https://wcs.hellocse.fr/', null,'#1da1f2'],
-        ['RH', 'Jungle', 'WE', 'https://www.welcomehome.io/wildcodeschool/me', null, '#1da1f2'],
-        ['Support', 'Odyssey', 'O', 'https://login.wildcodeschool.com/', null, '#3b5998'],
-        ['Support', 'GitHub', 'Git', 'https://github.com/WildCodeSchool', null, '#3b5998'],
-        ['Docs', 'Firefox Dev', 'FD', 'https://developer.mozilla.org/en-US/docs/Web/CSS', null, '#ff8800'],
-        ['Docs', 'W3School', 'W3S', 'https://www.w3schools.com/css', null, '#ff8800'],
-        ['Docs', 'React', 'R', 'https://reactjs.org/', null, '#ff8800'],
-        ['Docs', 'Node', 'N', 'https://nodejs.org/en/', null, '#ff8800'],
-        ['Docs', 'Express', 'N', 'https://expressjs.com/', null, '#ff8800'],
-        ['Docs', 'MySql', 'N', 'https://www.mysql.com/', null, '#ff8800'],
-        ['Veille', 'OpenCls', 'o', 'https://openclassrooms.com/fr/dashboard', null, '#2f2f2f'],
-        ['Veille', 'FreeCodeCamp', 'f', 'https://www.freecodecamp.org/', null, '#2f2f2f'],
-        ['Veille', 'You tube', 'y', 'https://youtube.com', null, '#2f2f2f'],
-        ['Outil', 'Paste', 'p', 'https://pastebin.com/', null, '#9cb443'],
-        ['Outil', 'Carbon', 'c', 'https://carbon.now.sh/', null, '#9cb443'],
-        ['Outil', 'Bitwarden', 'b', 'https://vault.bitwarden.com/#/', null, '#9cb443'],
-        ['Outil', 'Notion', 'n', 'https://www.notion.so/fr-fr', null, '#9cb443'],
-        ['Reseau', 'Slack', 's', 'https://app.slack.com/client/T6SG2QGG2/CTK3HUC3T/thread/CTK3HUC3T-1631106692.006400', null, '#9cb443'],
-        ['Reseau', 'Discord', 'd', 'https://discord.com/channels/@me', null, '#9cb443'],
-        ['Algo', 'France Ioi', 'd', 'http://www.france-ioi.org/algo/chapters.php', null, '#9cb443'],
-        ['Algo', 'CodeWars', 'd', 'https://www.codingame.com/start', null, '#9cb443'],
-        ['Algo', 'CodingGame', 'd', 'https://www.codewars.com/', null, '#9cb443']
+      [
+        null,
+        "Lilo",
+        "*",
+        "https://search.lilo.org/",
+        "/searchweb.php?q={}",
+        "#111",
+      ],
+      [
+        "Office",
+        "Drive",
+        "D",
+        "https://drive.google.com/drive/my-drive",
+        null,
+        "#833ab4",
+      ],
+      [
+        "Office",
+        "Gmail",
+        "G",
+        "https://mail.google.com/mail/u/0/#inbox",
+        null,
+        "#833ab4",
+      ],
+      [
+        "Office",
+        "Agenda",
+        "A",
+        "https://calendar.google.com/calendar/u/0/r?tab=mc",
+        null,
+        "#833ab4",
+      ],
+      [
+        "Office",
+        "Planning",
+        "P",
+        "https://docs.google.com/spreadsheets/d/1Ruc8IqQE_iHZ5jGpGdpxXB8An_Pj5EEZklcHAkQp0Go/edit#gid=768699138",
+        null,
+        "#833ab4",
+      ],
+      [
+        "Office",
+        "HubSpot",
+        "H",
+        "https://app.hubspot.com/login",
+        null,
+        "##833ab4",
+      ],
+      ["Office", "Trello", "T", "https://trello.com/b/9VArycJL/ressources"],
+      ["RH", "Lucca", "RH", "https://wcs.ilucca.net/", null, "#1da1f2"],
+      ["RH", "Congé", "CP", "https://www.paiepilote.fr/", null, "#1da1f2"],
+      ["RH", "CSE", "CSE", "https://wcs.hellocse.fr/", null, "#1da1f2"],
+      [
+        "RH",
+        "Jungle",
+        "WE",
+        "https://www.welcomehome.io/wildcodeschool/me",
+        null,
+        "#1da1f2",
+      ],
+      [
+        "Support",
+        "Odyssey",
+        "O",
+        "https://login.wildcodeschool.com/",
+        null,
+        "#3b5998",
+      ],
+      [
+        "Support",
+        "GitHub",
+        "Git",
+        "https://github.com/WildCodeSchool",
+        null,
+        "#3b5998",
+      ],
+      [
+        "Docs",
+        "Firefox Dev",
+        "FD",
+        "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        null,
+        "#ff8800",
+      ],
+      [
+        "Docs",
+        "W3School",
+        "W3S",
+        "https://www.w3schools.com/css",
+        null,
+        "#ff8800",
+      ],
+      ["Docs", "React", "R", "https://reactjs.org/", null, "#ff8800"],
+      ["Docs", "Node", "N", "https://nodejs.org/en/", null, "#ff8800"],
+      ["Docs", "Express", "N", "https://expressjs.com/", null, "#ff8800"],
+      ["Docs", "MySql", "N", "https://www.mysql.com/", null, "#ff8800"],
+      [
+        "Veille",
+        "OpenCls",
+        "o",
+        "https://openclassrooms.com/fr/dashboard",
+        null,
+        "#2f2f2f",
+      ],
+      [
+        "Veille",
+        "FreeCodeCamp",
+        "f",
+        "https://www.freecodecamp.org/",
+        null,
+        "#2f2f2f",
+      ],
+      ["Veille", "You tube", "y", "https://youtube.com", null, "#2f2f2f"],
+      ["Outil", "Paste", "p", "https://pastebin.com/", null, "#9cb443"],
+      ["Outil", "Carbon", "c", "https://carbon.now.sh/", null, "#9cb443"],
+      [
+        "Outil",
+        "Bitwarden",
+        "b",
+        "https://vault.bitwarden.com/#/",
+        null,
+        "#9cb443",
+      ],
+      ["Outil", "Notion", "n", "https://www.notion.so/fr-fr", null, "#9cb443"],
+      [
+        "Reseau",
+        "Slack",
+        "s",
+        "https://app.slack.com/client/T6SG2QGG2/CTK3HUC3T/thread/CTK3HUC3T-1631106692.006400",
+        null,
+        "#9cb443",
+      ],
+      [
+        "Reseau",
+        "Discord",
+        "d",
+        "https://discord.com/channels/@me",
+        null,
+        "#9cb443",
+      ],
+      [
+        "Algo",
+        "France Ioi",
+        "d",
+        "http://www.france-ioi.org/algo/chapters.php",
+        null,
+        "#9cb443",
+      ],
+      [
+        "Algo",
+        "CodeWars",
+        "d",
+        "https://www.codingame.com/start",
+        null,
+        "#9cb443",
+      ],
+      ["Algo", "CodingGame", "d", "https://www.codewars.com/", null, "#9cb443"],
     ],
 
     // give suggestions as you type
@@ -50,17 +175,29 @@
     // "DuckDuckGo" suggestions come from the duck duck go search api
     // "History" suggestions come from your previously entered queries
     influencers: [
-      { name: 'Default', limit: 5 },
-      { name: 'History', limit: 2 },
-      { name: 'DuckDuckGo', limit: 5 },
+      { name: "Default", limit: 5 },
+      { name: "History", limit: 2 },
+      { name: "DuckDuckGo", limit: 5 },
     ],
 
     // default search suggestions for the specified queries
     defaultSuggestions: {
-      'g': ['g/issues', 'g/pulls', 'gist.github.com', 'g/cadejscroggins', 'g/cadejscroggins/tilde'],
-      'l': ['l:electronic', 'l:chill', 'l:focus', 'l:sleep', 'l:ambient'],
-      'r': ['r/r/unixporn', 'r/r/startpages', 'r/r/webdev', 'r/r/technology', 'r/r/portland'],
-      's': ['s/you/likes', 's/discover/the-upload'],
+      g: [
+        "g/issues",
+        "g/pulls",
+        "gist.github.com",
+        "g/cadejscroggins",
+        "g/cadejscroggins/tilde",
+      ],
+      l: ["l:electronic", "l:chill", "l:focus", "l:sleep", "l:ambient"],
+      r: [
+        "r/r/unixporn",
+        "r/r/startpages",
+        "r/r/webdev",
+        "r/r/technology",
+        "r/r/portland",
+      ],
+      s: ["s/you/likes", "s/discover/the-upload"],
     },
 
     // instantly redirect when a key is matched
@@ -75,18 +212,18 @@
 
     // specify a theme file
     // remove or set to false to use the hardcoded theme
-    theme: 'file:///home/cade/.cache/wal/colors.css',
+    theme: "file:///home/cade/.cache/wal/colors.css",
 
     // the delimiter between the key and your search query
     // e.g. to search GitHub for potatoes you'd type "g:potatoes"
-    searchDelimiter: ':',
+    searchDelimiter: ":",
 
     // the delimiter between the key and a path
     // e.g. type "r/r/unixporn" to go to "reddit.com/r/unixporn"
-    pathDelimiter: '/',
+    pathDelimiter: "/",
 
     // the delimiter between the hours and minutes in the clock
-    clockDelimiter: ' : ',
+    clockDelimiter: " : ",
 
     // note: you can pass in your search query via the q query param
     // e.g. going to file:///path/to/tilde/index.html?q=hamsters is equivalent
@@ -94,15 +231,15 @@
   };
 </script>
 
-<meta charset="utf-8">
-<meta http-equiv="x-dns-prefetch-control" content="on">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
+<meta charset="utf-8" />
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
 
 <title>~</title>
 
 <style type="text/css">
-  @import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+  @import url("https://fonts.googleapis.com/css?family=Lato:400,900");
 
   :root {
     --color0: #111;
@@ -117,9 +254,9 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    transition: background-color .2s;
+    transition: background-color 0.2s;
     background-color: var(--color0);
-    background-image: url(background.jpg);
+    background-image: url(background.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     font-family: Lato, sans-serif;
@@ -161,7 +298,7 @@
     display: block;
     margin-top: -2em;
     font-size: 8rem;
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
     cursor: pointer;
     text-align: center;
     color: black;
@@ -170,12 +307,12 @@
   #search-form {
     padding: 1em;
     background-color: var(--color0);
-    transition: background-color .5s;
+    transition: background-color 0.5s;
     box-sizing: border-box;
     z-index: 2;
   }
 
-  #search-form>div {
+  #search-form > div {
     width: 100%;
   }
 
@@ -185,7 +322,7 @@
     margin-bottom: 20px;
     font-size: 1.5em;
     font-weight: 900;
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
   }
 
@@ -200,7 +337,7 @@
   }
 
   .search-suggestion {
-    padding: .7em 1em;
+    padding: 0.7em 1em;
     white-space: nowrap;
     font-size: 1.1em;
     cursor: pointer;
@@ -217,14 +354,14 @@
   }
 
   .search-suggestion b::after {
-    content: ' ';
+    content: " ";
     position: absolute;
     top: 51%;
     right: 0;
     left: 0;
     height: 3px;
     background-color: var(--color15);
-    opacity: .8;
+    opacity: 0.8;
   }
 
   .search-suggestion.highlight b::after {
@@ -249,8 +386,8 @@
 
   .category-name {
     margin: 0 0 2rem;
-    font-size: .7em;
-    letter-spacing: .2em;
+    font-size: 0.7em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
   }
 
@@ -258,7 +395,7 @@
     display: block;
     position: relative;
     margin: 1em 0;
-    font-size: .9em;
+    font-size: 0.9em;
     line-height: 2em;
     text-decoration: none;
   }
@@ -275,7 +412,7 @@
     border-radius: 50%;
     background-color: var(--color15);
     color: var(--color0);
-    font-size: .8em;
+    font-size: 0.8em;
     text-align: center;
   }
 
@@ -285,13 +422,13 @@
   }
 
   .command-name::after {
-    content: ' ';
+    content: " ";
     position: absolute;
     right: 0;
-    bottom: -.35em;
+    bottom: -0.35em;
     left: 0;
     height: 2px;
-    transition: .2s;
+    transition: 0.2s;
     transform: translateX(-2em);
     background: var(--color15);
     opacity: 0;
@@ -371,9 +508,14 @@
   <time id="clock"></time>
 </div>
 
-<form class="overlay center" id="search-form" autocomplete="off" spellcheck="false">
+<form
+  class="overlay center"
+  id="search-form"
+  autocomplete="off"
+  spellcheck="false"
+>
   <div>
-    <input id="search-input" type="text">
+    <input id="search-input" type="text" />
     <ul id="search-suggestions"></ul>
   </div>
 </form>
@@ -382,49 +524,62 @@
 
 <script>
   const $ = {
-    bodyClassAdd: c => $.el('body').classList.add(c),
-    bodyClassHas: c => $.el('body').classList.contains(c),
-    bodyClassRemove: c => $.el('body').classList.remove(c),
-    el: s => document.querySelector(s),
-    els: s => [].slice.call(document.querySelectorAll(s) || []),
-    escapeRegex: s => s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'),
+    bodyClassAdd: (c) => $.el("body").classList.add(c),
+    bodyClassHas: (c) => $.el("body").classList.contains(c),
+    bodyClassRemove: (c) => $.el("body").classList.remove(c),
+    el: (s) => document.querySelector(s),
+    els: (s) => [].slice.call(document.querySelectorAll(s) || []),
+    escapeRegex: (s) => s.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&"),
     ieq: (a, b) => a.toLowerCase() === b.toLowerCase(),
     iin: (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) !== -1,
-    isDown: e => ['c-n', 'down', 'tab'].includes($.key(e)),
-    isRemove: e => ['backspace', 'delete'].includes($.key(e)),
-    isUp: e => ['c-p', 'up', 's-tab'].includes($.key(e)),
+    isDown: (e) => ["c-n", "down", "tab"].includes($.key(e)),
+    isRemove: (e) => ["backspace", "delete"].includes($.key(e)),
+    isUp: (e) => ["c-p", "up", "s-tab"].includes($.key(e)),
 
-    jsonp: url => {
-      let script = document.createElement('script');
+    jsonp: (url) => {
+      let script = document.createElement("script");
       script.src = url;
-      $.el('head').appendChild(script);
+      $.el("head").appendChild(script);
     },
 
-    key: e => {
+    key: (e) => {
       const ctrl = e.ctrlKey;
       const shift = e.shiftKey;
 
       switch (e.which) {
-        case 8: return 'backspace';
-        case 9: return shift ? 's-tab' : 'tab';
-        case 13: return 'enter';
-        case 16: return 'shift';
-        case 17: return 'ctrl';
-        case 18: return 'alt';
-        case 27: return 'escape';
-        case 38: return 'up';
-        case 40: return 'down';
-        case 46: return 'delete';
-        case 78: return ctrl ? 'c-n' : 'n';
-        case 80: return ctrl ? 'c-p' : 'n';
-        case 91: return 'super';
+        case 8:
+          return "backspace";
+        case 9:
+          return shift ? "s-tab" : "tab";
+        case 13:
+          return "enter";
+        case 16:
+          return "shift";
+        case 17:
+          return "ctrl";
+        case 18:
+          return "alt";
+        case 27:
+          return "escape";
+        case 38:
+          return "up";
+        case 40:
+          return "down";
+        case 46:
+          return "delete";
+        case 78:
+          return ctrl ? "c-n" : "n";
+        case 80:
+          return ctrl ? "c-p" : "n";
+        case 91:
+          return "super";
       }
     },
   };
 
   class Clock {
     constructor(options) {
-      this._el = $.el('#clock');
+      this._el = $.el("#clock");
       this._delimiter = options.delimiter;
       this._form = options.form;
       this._setTime = this._setTime.bind(this);
@@ -433,23 +588,53 @@
     }
 
     _pad(num) {
-      return ('0' + num.toString()).slice(-2);
+      return ("0" + num.toString()).slice(-2);
     }
 
     _registerEvents() {
-      this._el.addEventListener('click', this._form.show);
+      this._el.addEventListener("click", this._form.show);
     }
 
     _setTime() {
       const date = new Date();
       const today = date.getDate();
-      const weekday = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+      const weekday = [
+        "Dimanche",
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi",
+        "Samedi",
+      ];
       const day = date.getDay();
-      const allMonth = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+      const allMonth = [
+        "Janvier",
+        "Février",
+        "Mars",
+        "Avril",
+        "Mai",
+        "Juin",
+        "Juillet",
+        "Août",
+        "Septembre",
+        "Octobre",
+        "Novembre",
+        "Décembre",
+      ];
       const month = date.getMonth();
       const hours = this._pad(date.getHours());
       const minutes = this._pad(date.getMinutes());
-      this._el.innerHTML =  weekday[day] + " " + today + " " + allMonth[month] + "<br>" + hours + this._delimiter + minutes;
+      this._el.innerHTML =
+        weekday[day] +
+        " " +
+        today +
+        " " +
+        allMonth[month] +
+        "<br>" +
+        hours +
+        this._delimiter +
+        minutes;
     }
 
     _start() {
@@ -460,7 +645,7 @@
 
   class Help {
     constructor(options) {
-      this._el = $.el('#help');
+      this._el = $.el("#help");
       this._commands = options.commands;
       this._newTab = options.newTab;
       this._toggled = false;
@@ -470,8 +655,8 @@
     }
 
     toggle(show) {
-      this._toggled = (typeof show !== 'undefined') ? show : !this._toggled;
-      this._toggled ? $.bodyClassAdd('help') : $.bodyClassRemove('help');
+      this._toggled = typeof show !== "undefined" ? show : !this._toggled;
+      this._toggled ? $.bodyClassAdd("help") : $.bodyClassRemove("help");
     }
 
     _bindMethods() {
@@ -479,12 +664,12 @@
     }
 
     _buildAndAppendLists() {
-      const lists = document.createElement('ul');
-      lists.classList.add('categories');
+      const lists = document.createElement("ul");
+      lists.classList.add("categories");
 
-      this._getCategories().forEach(category => {
+      this._getCategories().forEach((category) => {
         lists.insertAdjacentHTML(
-          'beforeend',
+          "beforeend",
           `<li class="category">
             <h2 class="category-name">${category}</h2>
             <ul>${this._buildListCommands(category)}</ul>
@@ -496,34 +681,34 @@
     }
 
     _buildListCommands(category) {
-      return this._commands.map(([cmdCategory, name, key, url]) => {
-        if (cmdCategory === category) {
-          return (
-            `<li class="command">
-              <a href="${url}" target="${this._newTab ? '_blank' : '_self'}">
+      return this._commands
+        .map(([cmdCategory, name, key, url]) => {
+          if (cmdCategory === category) {
+            return `<li class="command">
+              <a href="${url}" target="${this._newTab ? "_blank" : "_self"}">
                 <span class="command-key">${key}</span>
                 <span class="command-name">${name}</span>
               </a>
-            </li>`
-          );
-        }
-      }).join('');
+            </li>`;
+          }
+        })
+        .join("");
     }
 
     _getCategories() {
       const categories = this._commands
         .map(([category]) => category)
-        .filter(category => category);
+        .filter((category) => category);
 
       return [...new Set(categories)];
     }
 
     _handleKeydown(e) {
-      if ($.key(e) === 'escape') this.toggle(false);
+      if ($.key(e) === "escape") this.toggle(false);
     }
 
     _registerEvents() {
-      document.addEventListener('keydown', this._handleKeydown);
+      document.addEventListener("keydown", this._handleKeydown);
     }
   }
 
@@ -537,8 +722,8 @@
     getSuggestions() {}
 
     _addSearchPrefix(items, query) {
-      const searchPrefix = this._getSearchPrefix(query)
-      return items.map(s => searchPrefix ? searchPrefix + s : s);
+      const searchPrefix = this._getSearchPrefix(query);
+      return items.map((s) => (searchPrefix ? searchPrefix + s : s));
     }
 
     _getSearchPrefix(query) {
@@ -558,7 +743,7 @@
     }
 
     getSuggestions(query) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         const suggestions = this._defaultSuggestions[query];
         resolve(suggestions ? suggestions.slice(0, this._limit) : []);
       });
@@ -574,14 +759,15 @@
       const { query } = this._parseQuery(rawQuery);
       if (!query) return Promise.resolve([]);
 
-      return new Promise(resolve => {
-        const endpoint = 'https://duckduckgo.com/ac/';
-        const callback = 'autocompleteCallback';
+      return new Promise((resolve) => {
+        const endpoint = "https://duckduckgo.com/ac/";
+        const callback = "autocompleteCallback";
 
-        window[callback] = res => {
-          const suggestions = res.map(i => i.phrase)
-            .filter(s => !$.ieq(s, query))
-            .slice(0, this._limit)
+        window[callback] = (res) => {
+          const suggestions = res
+            .map((i) => i.phrase)
+            .filter((s) => !$.ieq(s, query))
+            .slice(0, this._limit);
 
           resolve(this._addSearchPrefix(suggestions, rawQuery));
         };
@@ -594,7 +780,7 @@
   class HistoryInfluencer extends Influencer {
     constructor() {
       super(...arguments);
-      this._storeName = 'history';
+      this._storeName = "history";
     }
 
     addItem(query) {
@@ -612,10 +798,10 @@
     }
 
     getSuggestions(query) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         const suggestions = this._getHistory()
           .map(([item]) => item)
-          .filter(item => this._itemContainsQuery(query, item))
+          .filter((item) => this._itemContainsQuery(query, item))
           .slice(0, this._limit);
 
         resolve(suggestions);
@@ -651,7 +837,7 @@
 
   class Suggester {
     constructor(options) {
-      this._el = $.el('#search-suggestions');
+      this._el = $.el("#search-suggestions");
       this._influencers = options.influencers;
       this._limit = options.limit;
       this._suggestionEls = [];
@@ -673,32 +859,32 @@
 
     success(query) {
       this._clearSuggestions();
-      this._influencers.forEach(i => i.addItem(query));
+      this._influencers.forEach((i) => i.addItem(query));
     }
 
     suggest(input) {
       input = input.trim();
-      if (input === '') this._clearSuggestions();
+      if (input === "") this._clearSuggestions();
 
-      Promise.all(this._getInfluencerPromises(input)).then(res => {
+      Promise.all(this._getInfluencerPromises(input)).then((res) => {
         const suggestions = this._flattenAndUnique(res);
         this._clearSuggestions();
 
         if (suggestions.length) {
           this._appendSuggestions(suggestions, input);
           this._registerSuggestionEvents();
-          $.bodyClassAdd('suggestions');
+          $.bodyClassAdd("suggestions");
         }
       });
     }
 
     _appendSuggestions(suggestions, input) {
       suggestions.some((suggestion, i) => {
-        const match = new RegExp($.escapeRegex(input), 'ig');
+        const match = new RegExp($.escapeRegex(input), "ig");
         const suggestionHtml = suggestion.replace(match, `<b>${input}</b>`);
 
         this._el.insertAdjacentHTML(
-          'beforeend',
+          "beforeend",
           `<li>
             <button
               type="button"
@@ -714,7 +900,7 @@
         return i + 1 >= this._limit;
       });
 
-      this._suggestionEls = $.els('.js-search-suggestion');
+      this._suggestionEls = $.els(".js-search-suggestion");
     }
 
     _bindMethods() {
@@ -722,17 +908,17 @@
     }
 
     _clearClickEvents() {
-      this._suggestionEls.forEach(el => {
+      this._suggestionEls.forEach((el) => {
         const callback = this._onClick.bind(null, el.value);
-        el.removeEventListener('click', callback);
+        el.removeEventListener("click", callback);
       });
     }
 
     _clearSuggestions() {
-      $.bodyClassRemove('suggestions');
+      $.bodyClassRemove("suggestions");
       this._clearClickEvents();
       this._suggestionEls = [];
-      this._el.innerHTML = '';
+      this._el.innerHTML = "";
     }
 
     // [[1, 2], [1, 2, 3, 4]] -> [1, 2, 3, 4]
@@ -742,7 +928,7 @@
 
     _focusNext(e) {
       const exists = this._suggestionEls.some((el, i) => {
-        if (el.classList.contains('highlight')) {
+        if (el.classList.contains("highlight")) {
           this._highlight(this._suggestionEls[i + 1], e);
           return true;
         }
@@ -753,7 +939,7 @@
 
     _focusPrevious(e) {
       const exists = this._suggestionEls.some((el, i) => {
-        if (el.classList.contains('highlight') && i) {
+        if (el.classList.contains("highlight") && i) {
           this._highlight(this._suggestionEls[i - 1], e);
           return true;
         }
@@ -763,8 +949,9 @@
     }
 
     _getInfluencerPromises(input) {
-      return this._influencers
-        .map(influencer => influencer.getSuggestions(input));
+      return this._influencers.map((influencer) =>
+        influencer.getSuggestions(input)
+      );
     }
 
     _handleKeydown(e) {
@@ -776,31 +963,31 @@
       this._unHighlight();
 
       if (el) {
-        this._onHighlight(el.getAttribute('data-suggestion'));
-        el.classList.add('highlight');
+        this._onHighlight(el.getAttribute("data-suggestion"));
+        el.classList.add("highlight");
         e.preventDefault();
       }
     }
 
     _registerEvents() {
-      document.addEventListener('keydown', this._handleKeydown);
+      document.addEventListener("keydown", this._handleKeydown);
     }
 
     _registerSuggestionEvents() {
-      this._suggestionEls.forEach(el => {
-        const value = el.getAttribute('data-suggestion');
-        el.addEventListener('mouseover', this._highlight.bind(this, el));
-        el.addEventListener('mouseout', this._unHighlight.bind(this));
-        el.addEventListener('click', this._onClick.bind(null, value));
+      this._suggestionEls.forEach((el) => {
+        const value = el.getAttribute("data-suggestion");
+        el.addEventListener("mouseover", this._highlight.bind(this, el));
+        el.addEventListener("mouseout", this._unHighlight.bind(this));
+        el.addEventListener("click", this._onClick.bind(null, value));
       });
     }
 
     _unHighlight(e) {
-      const el = $.el('.highlight');
+      const el = $.el(".highlight");
 
       if (el) {
         this._onUnhighlight();
-        el.classList.remove('highlight');
+        el.classList.remove("highlight");
         if (e) e.preventDefault();
       }
     }
@@ -820,7 +1007,7 @@
 
       if (query.match(this._urlRegex)) {
         const hasProtocol = query.match(this._protocolRegex);
-        res.redirect = hasProtocol ? query : 'http://' + query;
+        res.redirect = hasProtocol ? query : "http://" + query;
       } else {
         const splitSearch = query.split(this._searchDelimiter);
         const splitPath = query.split(this._pathDelimiter);
@@ -848,7 +1035,7 @@
             return true;
           }
 
-          if (key === '*') {
+          if (key === "*") {
             res.redirect = this._prepSearch(url, searchPath, query);
           }
         });
@@ -861,27 +1048,27 @@
     _getColorFromUrl(url) {
       const domain = this._getHostname(url);
       const color = this._commands
-        .filter(c => this._getHostname(c[3]) === domain)
-        .map(c => c[5])[0];
+        .filter((c) => this._getHostname(c[3]) === domain)
+        .map((c) => c[5])[0];
 
       return color || null;
     }
 
     _getHostname(url) {
-      const parser = document.createElement('a');
+      const parser = document.createElement("a");
       parser.href = url;
-      return parser.hostname.replace(/^www./, '');
+      return parser.hostname.replace(/^www./, "");
     }
 
     _prepPath(url, path) {
-      return this._stripUrlPath(url) + '/' + path;
+      return this._stripUrlPath(url) + "/" + path;
     }
 
     _prepSearch(url, searchPath, query) {
       if (!searchPath) return url;
       const baseUrl = this._stripUrlPath(url);
       const urlQuery = encodeURIComponent(query);
-      searchPath = searchPath.replace('{}', urlQuery);
+      searchPath = searchPath.replace("{}", urlQuery);
       return baseUrl + searchPath;
     }
 
@@ -891,7 +1078,7 @@
     }
 
     _stripUrlPath(url) {
-      const parser = document.createElement('a');
+      const parser = document.createElement("a");
       parser.href = url;
       return `${parser.protocol}//${parser.hostname}`;
     }
@@ -899,28 +1086,28 @@
 
   class Form {
     constructor(options) {
-      this._formEl = $.el('#search-form');
-      this._inputEl = $.el('#search-input');
+      this._formEl = $.el("#search-form");
+      this._inputEl = $.el("#search-input");
       this._colors = options.colors;
       this._help = options.help;
       this._suggester = options.suggester;
       this._queryParser = options.queryParser;
       this._instantRedirect = options.instantRedirect;
       this._newTab = options.newTab;
-      this._inputElVal = '';
+      this._inputElVal = "";
       this._bindMethods();
       this._registerEvents();
       this._loadQueryParam();
     }
 
     hide() {
-      $.bodyClassRemove('form')
-      this._inputEl.value = '';
-      this._inputElVal = '';
+      $.bodyClassRemove("form");
+      this._inputEl.value = "";
+      this._inputElVal = "";
     }
 
     show() {
-      $.bodyClassAdd('form');
+      $.bodyClassAdd("form");
       this._inputEl.focus();
     }
 
@@ -944,12 +1131,15 @@
       if ($.isUp(e) || $.isDown(e) || $.isRemove(e)) return;
 
       switch ($.key(e)) {
-        case 'alt':
-        case 'ctrl':
-        case 'enter':
-        case 'shift':
-        case 'super': return;
-        case 'escape': this.hide(); return;
+        case "alt":
+        case "ctrl":
+        case "enter":
+        case "shift":
+        case "super":
+          return;
+        case "escape":
+          this.hide();
+          return;
       }
 
       this.show();
@@ -957,7 +1147,7 @@
 
     _handleInput() {
       const newQuery = this._inputEl.value;
-      const isHelp = newQuery === '?';
+      const isHelp = newQuery === "?";
       const { isKey } = this._queryParser.parse(newQuery);
       this._inputElVal = newQuery;
       this._setBackgroundFromQuery(newQuery);
@@ -968,7 +1158,7 @@
     }
 
     _loadQueryParam() {
-      const q = new URLSearchParams(window.location.search).get('q');
+      const q = new URLSearchParams(window.location.search).get("q");
       if (q) this._submitWithValue(q);
     }
 
@@ -978,14 +1168,14 @@
     }
 
     _redirect(redirect) {
-      if (this._newTab) window.open(redirect, '_blank');
+      if (this._newTab) window.open(redirect, "_blank");
       else window.location.href = redirect;
     }
 
     _registerEvents() {
-      document.addEventListener('keydown', this._handleKeydown);
-      this._inputEl.addEventListener('input', this._handleInput);
-      this._formEl.addEventListener('submit', this._submitForm, false);
+      document.addEventListener("keydown", this._handleKeydown);
+      this._inputEl.addEventListener("input", this._handleInput);
+      this._formEl.addEventListener("submit", this._submitForm, false);
 
       if (this._suggester) {
         this._suggester.setOnClick(this._submitWithValue);
@@ -1030,7 +1220,7 @@
       History: HistoryInfluencer,
     };
 
-    return CONFIG.influencers.map(i => {
+    return CONFIG.influencers.map((i) => {
       return new availableInfluencers[i.name]({
         limit: i.limit,
         queryParser: getQueryParser(),
@@ -1071,10 +1261,10 @@
   });
 
   if (CONFIG.theme) {
-    const link = document.createElement('link');
+    const link = document.createElement("link");
     link.href = CONFIG.theme;
-    link.type = 'text/css';
-    link.rel = 'stylesheet';
-    $.el('head').appendChild(link);
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    $.el("head").appendChild(link);
   }
 </script>
